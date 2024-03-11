@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@color/secondColor">
+
+        <LinearLayout
+            android:id="@+id/tournamentInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_4"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/tournamenImageView"
+                android:layout_width="@dimen/margin_24"
+                android:layout_height="@dimen/margin_24"
+                android:scaleType="fitXY"
+                tools:src="@drawable/ic_turkey_flag_circular" />
+
+            <TextView
+                android:id="@+id/tournamentText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_12"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_16"
+                android:textStyle="bold"
+                tools:text="Türkiye Kupası" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_2"
+            android:layout_marginTop="@dimen/margin_12"
+            app:cardCornerRadius="@dimen/margin_12"
+            app:cardElevation="@dimen/margin_12"
+            app:layout_constraintTop_toBottomOf="@+id/tournamentInfoLayout">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/detailRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_score" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
